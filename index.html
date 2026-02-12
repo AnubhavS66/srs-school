@@ -3,113 +3,120 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Suryarekha School | Admission Open</title>
+    <title>Suryarekha School | Amethi</title>
     <style>
         * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Poppins', sans-serif; }
-        body { background-color: #f4f7f6; color: #333; }
+        body { background-color: #f0f4f8; color: #333; }
 
         header {
-            background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('https://images.unsplash.com/photo-1523050854058-8df90110c9f1?auto=format&fit=crop&q=80&w=1000');
+            background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('https://images.unsplash.com/photo-1546410531-bb4caa6b424d?auto=format&fit=crop&q=80&w=1000');
             background-size: cover; background-position: center;
-            color: white; padding: 100px 20px; text-align: center;
+            color: white; padding: 80px 20px; text-align: center;
         }
-        
-        .container { max-width: 900px; margin: -60px auto 40px; padding: 0 20px; }
-        .card { background: white; padding: 30px; border-radius: 15px; box-shadow: 0 10px 30px rgba(0,0,0,0.1); margin-bottom: 30px; }
-        
-        h2 { color: #e67e22; margin-bottom: 20px; border-bottom: 2px solid #eee; padding-bottom: 10px; }
+        header h1 { font-size: 2.5rem; letter-spacing: 2px; }
+        header p { color: #ffcc00; font-weight: bold; margin-top: 10px; }
 
-        /* Form Styling */
-        .form-group { margin-bottom: 15px; text-align: left; }
-        label { display: block; font-weight: bold; margin-bottom: 5px; }
-        input, select, textarea {
-            width: 100%; padding: 12px; border: 1px solid #ccc; border-radius: 8px; font-size: 1rem;
+        .container { max-width: 900px; margin: -40px auto 40px; padding: 0 20px; }
+        .card { background: white; padding: 25px; border-radius: 15px; box-shadow: 0 10px 25px rgba(0,0,0,0.1); margin-bottom: 25px; }
+        
+        h2 { color: #d35400; margin-bottom: 20px; border-bottom: 2px solid #eee; padding-bottom: 10px; }
+
+        /* Stats Section */
+        .stats-grid { display: flex; justify-content: space-around; flex-wrap: wrap; gap: 10px; margin-bottom: 20px; }
+        .stat-item { background: #fff5e6; padding: 15px; border-radius: 10px; text-align: center; flex: 1; min-width: 150px; }
+        .stat-item h3 { color: #e67e22; font-size: 1.5rem; }
+
+        /* Admission Form */
+        .form-group { margin-bottom: 15px; }
+        label { display: block; font-weight: bold; margin-bottom: 5px; color: #555; }
+        input, select, textarea { width: 100%; padding: 12px; border: 1px solid #ddd; border-radius: 8px; outline: none; }
+        input:focus { border-color: #e67e22; }
+        
+        .submit-btn { 
+            background: #e67e22; color: white; border: none; padding: 15px; 
+            border-radius: 8px; width: 100%; font-size: 1.1rem; font-weight: bold; 
+            cursor: pointer; transition: 0.3s;
         }
-        .submit-btn {
-            background: #e67e22; color: white; border: none; padding: 15px 30px;
-            border-radius: 30px; cursor: pointer; font-size: 1.1rem; font-weight: bold;
-            width: 100%; transition: 0.3s; margin-top: 10px;
+        .submit-btn:hover { background: #d35400; }
+
+        /* WhatsApp Button */
+        .whatsapp-btn {
+            display: block; background: #25d366; color: white; text-align: center;
+            padding: 12px; border-radius: 8px; text-decoration: none; font-weight: bold; margin-top: 10px;
         }
-        .submit-btn:hover { background: #d35400; transform: translateY(-2px); }
 
-        .success-msg { color: #27ae60; font-weight: bold; margin-top: 15px; display: none; }
+        .admin-box { display: flex; justify-content: space-between; gap: 20px; margin-top: 20px; }
+        .admin-card { background: #2c3e50; color: white; padding: 15px; border-radius: 10px; flex: 1; text-align: center; }
+        .admin-card h4 { color: #ffcc00; }
 
-        .admin-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; text-align: center; }
-        .admin-box { background: #2c3e50; color: white; padding: 15px; border-radius: 10px; }
-        
-        footer { text-align: center; padding: 30px; color: #888; }
+        footer { text-align: center; padding: 40px; color: #777; font-size: 0.9rem; }
+        .credit { color: #333; font-weight: bold; margin-top: 10px; font-size: 1rem; }
+
+        @media (max-width: 600px) { .admin-box { flex-direction: column; } }
     </style>
 </head>
 <body>
 
     <header>
         <h1>SURYAREKHA SCHOOL</h1>
-        <p>Admission Open for Academic Year 2026-27</p>
+        <p>BETTER EDUCATION AND BETTER LIFE</p>
     </header>
 
     <div class="container">
-        <div class="card" id="admission">
-            <h2>Admission Enquiry Form 📝</h2>
-            <form id="schoolForm" action="https://formspree.io/f/YOUR_ID_HERE" method="POST">
+        
+        <div class="card">
+            <h2>Board Results 🏆</h2>
+            <div class="stats-grid">
+                <div class="stat-item"><h3>90%+</h3><p>2023</p></div>
+                <div class="stat-item"><h3>90%+</h3><p>2024</p></div>
+                <div class="stat-item" style="background: #e8f5e9;"><h3>99%</h3><p>2025</p></div>
+            </div>
+        </div>
+
+        <div class="card">
+            <h2>Admission Form 2026 📝</h2>
+            <form action="https://formspree.io/f/YOUR_ID_HERE" method="POST">
                 <div class="form-group">
                     <label>Student Name</label>
-                    <input type="text" name="student_name" placeholder="Bachhe ka naam" required>
+                    <input type="text" name="name" placeholder="Bachhe ka naam" required>
                 </div>
                 <div class="form-group">
-                    <label>Parent's Mobile Number</label>
-                    <input type="tel" name="phone" placeholder="Mobile number" required>
+                    <label>Mobile Number</label>
+                    <input type="tel" name="phone" placeholder="Parent ka mobile no." required>
                 </div>
                 <div class="form-group">
-                    <label>Class Seeking Admission</label>
-                    <select name="class" required>
-                        <option value="">Select Class</option>
-                        <option value="Primary">Primary (1st-5th)</option>
-                        <option value="Junior">Junior (6th-10th)</option>
-                        <option value="Senior">Senior (11th-12th)</option>
+                    <label>Class</label>
+                    <select name="class">
+                        <option>Nursery - 5th</option>
+                        <option>6th - 10th</option>
+                        <option>11th - 12th (IITian Mentorship)</option>
                     </select>
                 </div>
-                <div class="form-group">
-                    <label>Your Message (Optional)</label>
-                    <textarea name="message" rows="3" placeholder="Kuch puchna chahte hain?"></textarea>
-                </div>
-                <button type="submit" class="submit-btn" id="submitBtn">Submit Enquiry</button>
-                <p class="success-msg" id="msg">✅ Thank you! Hum aapse jaldi contact karenge.</p>
+                <button type="submit" class="submit-btn">Submit Application</button>
             </form>
+            <a href="https://wa.me/91XXXXXXXXXX?text=Hi, I want to ask about admission" class="whatsapp-btn">Direct WhatsApp Inquiry</a>
         </div>
 
         <div class="card">
             <h2>School Management</h2>
-            <div class="admin-grid">
-                <div class="admin-box">
+            <div class="admin-box">
+                <div class="admin-card">
                     <h4>Akhilesh Singh</h4>
                     <p>Principal</p>
                 </div>
-                <div class="admin-box">
+                <div class="admin-card">
                     <h4>Gaurav Tiwari</h4>
                     <p>Manager</p>
                 </div>
             </div>
         </div>
+
     </div>
 
-    <footer>&copy; 2026 Suryarekha School | Powered by JS</footer>
+    <footer>
+        <p>&copy; 2026 Suryarekha School | Tiloi, Amethi</p>
+        <p class="credit">Website by Anubhav Singh</p>
+    </footer>
 
-    <script>
-        // JavaScript for simple form handling
-        const form = document.getElementById('schoolForm');
-        const msg = document.getElementById('msg');
-        const btn = document.getElementById('submitBtn');
-
-        form.onsubmit = function() {
-            btn.innerHTML = "Sending...";
-            btn.style.opacity = "0.7";
-            // Formspree handles the data. This is just for UI.
-            setTimeout(() => {
-                msg.style.display = "block";
-                btn.innerHTML = "Submitted!";
-                form.reset();
-            }, 1000);
-        };
-    </script>
 </body>
 </html>
