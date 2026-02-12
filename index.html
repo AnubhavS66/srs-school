@@ -1,93 +1,115 @@
+
 <!DOCTYPE html>
 <html lang="hi">
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Suryarekha School</title>
     <style>
-        body {
-            font-family: serif;
-            margin: 0;
-            padding: 0;
-            background-color: #f0f0f0;
-        }
-        .header {
-            background-color: #ff9900;
-            color: #cc3300;
+        * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Segoe UI', Roboto, sans-serif; }
+        
+        body { background-color: #f0f2f5; color: #333; line-height: 1.6; }
+
+        /* Header Styling */
+        header {
+            background: linear-gradient(135deg, #ff8c00, #ffae42);
+            color: white;
+            padding: 40px 20px;
             text-align: center;
-            padding: 20px;
-            border-bottom: 2px solid #000;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
         }
-        .header h1 {
-            margin: 0;
-            font-size: 32px;
-            font-weight: bold;
+        header h1 { font-size: 2.5rem; margin-bottom: 10px; text-transform: uppercase; letter-spacing: 1px; }
+        header p { font-style: italic; font-weight: 300; opacity: 0.9; }
+
+        /* Main Container */
+        .container { max-width: 900px; margin: -30px auto 40px; padding: 20px; }
+
+        /* Card Styling */
+        .card {
+            background: white;
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+            margin-bottom: 25px;
         }
-        .header h2 {
-            margin: 5px 0 0 0;
-            font-size: 24px;
-            font-weight: bold;
+
+        h2 { color: #ff8c00; margin-bottom: 15px; border-bottom: 2px solid #fff3e0; display: inline-block; padding-bottom: 5px; }
+
+        .address { font-size: 1.1rem; color: #555; margin-bottom: 20px; }
+
+        /* Facilities Grid */
+        .facilities-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 15px;
+            margin-top: 15px;
         }
-        .content {
-            padding: 20px;
-            border: 1px solid #000;
-            margin: 10px;
-            background-color: #e0e0e0;
+
+        .facility-item {
+            background: #fff9f0;
+            padding: 15px;
+            border-radius: 8px;
+            border-left: 4px solid #ff8c00;
+            font-weight: 600;
+            color: #444;
+            transition: transform 0.2s;
         }
-        .reviews-header {
-            font-weight: bold;
-            text-decoration: underline;
-            margin-bottom: 10px;
-            display: block;
+
+        .facility-item:hover { transform: translateY(-3px); background: #ffefd5; }
+
+        .special-note {
+            background: #e3f2fd;
+            border-left: 4px solid #2196f3;
+            padding: 10px;
+            margin-top: 10px;
+            font-size: 0.9rem;
         }
-        .description {
-            font-weight: bold;
-            font-size: 18px;
-            line-height: 1.5;
-            margin-bottom: 20px;
-            text-transform: uppercase;
-        }
-        .facilities-title {
-            font-weight: bold;
-            text-decoration: underline;
-            font-size: 20px;
-            margin-bottom: 15px;
-        }
-        .facilities-list {
-            list-style-type: none;
-            padding: 0;
-            font-weight: bold;
-            font-size: 18px;
-        }
-        .facilities-list li {
-            margin-bottom: 5px;
+
+        /* Footer */
+        footer { text-align: center; color: #888; padding: 20px; font-size: 0.8rem; }
+
+        /* Mobile adjustments */
+        @media (max-width: 600px) {
+            header h1 { font-size: 1.8rem; }
+            .container { margin-top: 10px; }
         }
     </style>
 </head>
 <body>
 
-    <div class="header">
-        <h1>WELCOME TO SURYAREKHA SCHOOL</h1>
-        <h2>BETTER EDUCATION AND BETTER LIFE</h2>
-    </div>
+    <header>
+        <h1>Suryarekha School</h1>
+        <p>"Better Education and Better Life"</p>
+    </header>
 
-    <div class="content">
-        <span class="reviews-header">REVIEWES-</span>
-        
-        <div class="description">
-            SURYA REKHA SCHOOL IS AN HINDI MEDIUM AFFILIATED WITH UP BOARD AND LOCATED AT VILLAGE - PURE NIHAL SINGH, PAKORGAON, TILOI, AMETHI, UTTAR PRADESH, INDIA, 229309
+    <div class="container">
+        <div class="card">
+            <h2>About Us</h2>
+            <p class="address">
+                Surya Rekha School is a <strong>Hindi Medium</strong> school affiliated with <strong>UP Board</strong>.<br>
+                <small>📍 Pure Nihal Singh, Pakorgaon, Tiloi, Amethi, UP - 229309</small>
+            </p>
         </div>
 
-        <div class="facilities-title">FACILITIES:</div>
-        
-        <ul class="facilities-list">
-            <li>EXTRA CLASSES</li>
-            <li>CLEAN WATER</li>
-            <li>CLEAN CLASSES</li>
-            <li>TRANSPORT FACILITY</li>
-            <li>PLAY GROUND</li>
-            <li>11<sup>TH</sup> 12<sup>TH</sup> CLASSES BY ITIANS.</li>
-        </ul>
+        <div class="card">
+            <h2>Our Facilities</h2>
+            <div class="facilities-grid">
+                <div class="facility-item">📚 Extra Classes</div>
+                <div class="facility-item">💧 Clean Water</div>
+                <div class="facility-item">🏫 Clean Classrooms</div>
+                <div class="facility-item">🚌 Transport Facility</div>
+                <div class="facility-item">⚽ Play Ground</div>
+                <div class="facility-item">🎓 11th & 12th by IITians</div>
+            </div>
+            <div class="special-note">
+                * Our senior secondary classes (11th & 12th) are mentored by experts from IITs.
+            </div>
+        </div>
     </div>
+
+    <footer>
+        &copy; 2026 Suryarekha School | Built with ❤️ for Education
+    </footer>
 
 </body>
 </html>
