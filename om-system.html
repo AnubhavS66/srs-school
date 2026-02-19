@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>OM Development and Security Team AI</title>
+
+<link rel="stylesheet"
+href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+<style>
+
+/* Loading screen */
+
+#loader{
+position:fixed;
+width:100%;
+height:100%;
+background:black;
+display:flex;
+flex-direction:column;
+justify-content:center;
+align-items:center;
+z-index:9999;
+color:#00ffcc;
+}
+
+.spinner{
+border:5px solid #333;
+border-top:5px solid #00ffcc;
+border-radius:50%;
+width:60px;
+height:60px;
+animation:spin 1s linear infinite;
+}
+
+@keyframes spin{
+0%{transform:rotate(0deg);}
+100%{transform:rotate(360deg);}
+}
+
+/* Main */
+
+body{
+margin:0;
+font-family:Arial;
+background:linear-gradient(135deg,#0a0f1f,#203a43);
+color:white;
+text-align:center;
+}
+
+/* Header */
+
+header{
+background:black;
+padding:20px;
+font-size:28px;
+color:#00ffcc;
+box-shadow:0 0 15px #00ffcc;
+}
+
+.logo{
+width:70px;
+}
+
+/* AI */
+
+.ai-button{
+position:fixed;
+bottom:20px;
+right:20px;
+background:#00ffcc;
+color:black;
+padding:15px;
+border-radius:50%;
+font-size:24px;
+cursor:pointer;
+}
+
+.ai-box{
+display:none;
+position:fixed;
+bottom:80px;
+right:20px;
+width:300px;
+background:black;
+border-radius:10px;
+box-shadow:0 0 20px #00ffcc;
+}
+
+.ai-header{
+background:#00ffcc;
+color:black;
+padding:10px;
+}
+
+.ai-chat{
+height:200px;
+overflow:auto;
+padding:10px;
+background:#111;
+}
+
+.ai-input{
+width:100%;
+padding:10px;
+border:none;
+}
+
+.ai-send{
+width:100%;
+padding:10px;
+background:#00ffcc;
+border:none;
+cursor:pointer;
+}
+
+</style>
+
+</head>
+<body>
+
+<!-- Loading -->
+
+<div id="loader">
+
+<div class="spinner"></div>
+
+<h2>Loading OM Development and Security Team...</h2>
+
+</div>
+
+<!-- Header -->
+
+<header>
+
+<img src="https://cdn-icons-png.flaticon.com/512/1055/1055687.png"
+class="logo">
+
+<br>
+
+OM Development and Security Team AI System
+
+</header>
+
+<h2>Welcome to OM AI Assistant 🤖</h2>
+
+<p>This is advanced AI system of OM Development and Security Team.</p>
+
+<!-- AI button -->
+
+<div class="ai-button" onclick="toggleAI()">🤖</div>
+
+<div class="ai-box" id="aiBox">
+
+<div class="ai-header">
+OM AI Assistant
+</div>
+
+<div class="ai-chat" id="chat">
+Hello 👋 Welcome to OM Development and Security Team
+</div>
+
+<input class="ai-input" id="input" placeholder="Type message">
+
+<button class="ai-send" onclick="send()">Send</button>
+
+</div>
+
+<script>
+
+/* Loading + voice */
+
+window.onload=function(){
+
+document.getElementById("loader").style.display="none";
+
+let msg=new SpeechSynthesisUtterance(
+"Welcome to OM Development and Security Team AI system"
+);
+
+speechSynthesis.speak(msg);
+
+}
+
+/* Toggle AI */
+
+function toggleAI(){
+
+let box=document.getElementById("aiBox");
+
+box.style.display=
+box.style.display=="block"?"none":"block";
+
+}
+
+/* Send */
+
+function send(){
+
+let input=document.getElementById("input");
+let chat=document.getElementById("chat");
+
+let msg=input.value;
+
+if(msg=="") return;
+
+chat.innerHTML+="<br><b>You:</b> "+msg;
+
+let reply=replyAI(msg);
+
+setTimeout(()=>{
+chat.innerHTML+="<br><b>AI:</b> "+reply;
+},500);
+
+input.value="";
+
+}
+
+/* AI brain */
+
+function replyAI(msg){
+
+msg=msg.toLowerCase();
+
+if(msg.includes("hello") || msg.includes("hi"))
+return "Hello 👋 Welcome to OM Development and Security Team.";
+
+if(msg.includes("website"))
+return "We create professional websites.";
+
+if(msg.includes("game"))
+return "We develop modern games.";
+
+if(msg.includes("bug"))
+return "We provide bug bounty services.";
+
+if(msg.includes("contact"))
+return "Contact WhatsApp: 9616457920 Email: thekinggaming882@gmail.com";
+
+return "OM AI: Contact us for more information.";
+
+}
+
+</script>
+
+</body>
+</html>
