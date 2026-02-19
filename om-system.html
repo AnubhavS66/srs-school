@@ -4,242 +4,251 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>OM Development and Security Team AI</title>
+<title>OM Development and Security Team</title>
 
 <link rel="stylesheet"
 href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 
 <style>
 
-/* Loading screen */
-
-#loader{
-position:fixed;
-width:100%;
-height:100%;
-background:black;
-display:flex;
-flex-direction:column;
-justify-content:center;
-align-items:center;
-z-index:9999;
-color:#00ffcc;
-}
-
-.spinner{
-border:5px solid #333;
-border-top:5px solid #00ffcc;
-border-radius:50%;
-width:60px;
-height:60px;
-animation:spin 1s linear infinite;
-}
-
-@keyframes spin{
-0%{transform:rotate(0deg);}
-100%{transform:rotate(360deg);}
-}
-
-/* Main */
-
 body{
 margin:0;
 font-family:Arial;
 background:linear-gradient(135deg,#0a0f1f,#203a43);
 color:white;
-text-align:center;
 }
 
 /* Header */
-
 header{
 background:black;
-padding:20px;
-font-size:28px;
+padding:25px;
+text-align:center;
+font-size:30px;
+font-weight:bold;
 color:#00ffcc;
-box-shadow:0 0 15px #00ffcc;
-}
-
-.logo{
-width:70px;
-}
-
-/* AI */
-
-.ai-button{
-position:fixed;
-bottom:20px;
-right:20px;
-background:#00ffcc;
-color:black;
-padding:15px;
-border-radius:50%;
-font-size:24px;
-cursor:pointer;
-}
-
-.ai-box{
-display:none;
-position:fixed;
-bottom:80px;
-right:20px;
-width:300px;
-background:black;
-border-radius:10px;
 box-shadow:0 0 20px #00ffcc;
 }
+    
 
-.ai-header{
-background:#00ffcc;
-color:black;
-padding:10px;
+/* Intro */
+.intro{
+text-align:center;
+padding:30px;
 }
 
-.ai-chat{
-height:200px;
-overflow:auto;
-padding:10px;
+.intro p{
+color:#ccc;
+max-width:700px;
+margin:auto;
+}
+
+/* Boxes */
+.container{
+display:flex;
+flex-wrap:wrap;
+justify-content:center;
+gap:20px;
+padding:20px;
+}
+
+.box{
 background:#111;
+padding:20px;
+width:300px;
+border-radius:15px;
+box-shadow:0 0 15px #00ffcc;
+transition:0.3s;
 }
 
-.ai-input{
-width:100%;
-padding:10px;
-border:none;
+.box:hover{
+transform:scale(1.05);
 }
 
-.ai-send{
-width:100%;
-padding:10px;
-background:#00ffcc;
-border:none;
-cursor:pointer;
+.box i{
+font-size:40px;
+color:#00ffcc;
+}
+
+/* Images */
+.images{
+text-align:center;
+padding:20px;
+}
+
+.images img{
+width:300px;
+margin:10px;
+border-radius:10px;
+}
+
+/* Contact */
+.contact{
+text-align:center;
+padding:30px;
+}
+
+.btn{
+display:inline-block;
+padding:12px 20px;
+margin:10px;
+border-radius:30px;
+text-decoration:none;
+color:white;
+font-size:18px;
+}
+
+.whatsapp{
+background:#25D366;
+}
+
+.email{
+background:#0072ff;
+}
+
+/* Contact card */
+.contact-card{
+background:black;
+padding:25px;
+margin:20px;
+text-align:center;
+box-shadow:0 0 15px #00ffcc;
+border-radius:15px;
+}
+
+/* Footer */
+footer{
+background:black;
+padding:15px;
+text-align:center;
+color:#aaa;
 }
 
 </style>
-
 </head>
 <body>
-
-<!-- Loading -->
-
-<div id="loader">
-
-<div class="spinner"></div>
-
-<h2>Loading OM Development and Security Team...</h2>
-
-</div>
-
-<!-- Header -->
-
+<a href="ai.html" style="
+display:inline-block;
+padding:12px 20px;
+background:#00ffcc;
+color:black;
+text-decoration:none;
+border-radius:10px;
+font-weight:bold;
+margin:10px;
+">
+🤖 Open OM AI Assistant
+</a>
+  
 <header>
-
-<img src="https://cdn-icons-png.flaticon.com/512/1055/1055687.png"
-class="logo">
-
-<br>
-
-OM Development and Security Team AI System
-
+WELCOME TO OM DEVELOPMENT AND SECURITY TEAM
 </header>
 
-<h2>Welcome to OM AI Assistant 🤖</h2>
+<div class="intro">
 
-<p>This is advanced AI system of OM Development and Security Team.</p>
-
-<!-- AI button -->
-
-<div class="ai-button" onclick="toggleAI()">🤖</div>
-
-<div class="ai-box" id="aiBox">
-
-<div class="ai-header">
-OM AI Assistant
-</div>
-
-<div class="ai-chat" id="chat">
-Hello 👋 Welcome to OM Development and Security Team
-</div>
-
-<input class="ai-input" id="input" placeholder="Type message">
-
-<button class="ai-send" onclick="send()">Send</button>
+<p>
+OM Development and Security Team is a professional company providing Website Development, Game Development and Bug Bounty services. We create modern, fast and professional digital solutions for clients.
+</p>
 
 </div>
+
+<!-- Services -->
+<div class="container">
+
+<div class="box">
+
+<i class="fas fa-globe"></i>
+
+<h2>Website Development</h2>
+
+<p>
+We build professional, modern and fast websites for schools, companies and businesses. Our websites are mobile friendly and secure.
+</p>
+
+</div>
+
+<div class="box">
+
+<i class="fas fa-gamepad"></i>
+
+<h2>Game Development</h2>
+
+<p>
+We develop professional games for mobile and web platforms. Our games are optimized, smooth and modern.
+</p>
+
+</div>
+
+<div class="box">
+
+<i class="fas fa-bug"></i>
+
+<h2>Bug Bounty</h2>
+
+<p>
+We help find bugs and vulnerabilities in websites and applications to improve performance and stability.
+</p>
+
+</div>
+
+</div>
+
+<!-- Images -->
+<div class="images">
+
+<img src="https://images.unsplash.com/photo-1555066931-4365d14bab8c">
+
+<img src="https://images.unsplash.com/photo-1511512578047-dfb367046420">
+
+<img src="https://images.unsplash.com/photo-1555949963-aa79dcee981c">
+
+</div>
+
+<!-- Contact buttons -->
+<div class="contact">
+
+<h2>Contact Us</h2>
+
+<a href="https://wa.me/919616457920" class="btn whatsapp">
+
+<i class="fab fa-whatsapp"></i> WhatsApp
+
+</a>
+
+<a href="mailto:thekinggaming882@gmail.com" class="btn email">
+
+<i class="fas fa-envelope"></i> Email
+
+</a>
+
+</div>
+
+<!-- Contact card -->
+<div class="contact-card">
+
+<h2>OM Development and Security Team</h2>
+
+<p><i class="fas fa-phone"></i> 9616457920</p>
+
+<p><i class="fas fa-envelope"></i> thekinggaming882@gmail.com</p>
+
+</div>
+
+<footer>
+
+© 2026 OM Development and Security Team
+
+</footer>
 
 <script>
 
-/* Loading + voice */
-
+/* Voice welcome */
 window.onload=function(){
 
-document.getElementById("loader").style.display="none";
-
 let msg=new SpeechSynthesisUtterance(
-"Welcome to OM Development and Security Team AI system"
+"Welcome to OM Development and Security Team"
 );
 
 speechSynthesis.speak(msg);
-
-}
-
-/* Toggle AI */
-
-function toggleAI(){
-
-let box=document.getElementById("aiBox");
-
-box.style.display=
-box.style.display=="block"?"none":"block";
-
-}
-
-/* Send */
-
-function send(){
-
-let input=document.getElementById("input");
-let chat=document.getElementById("chat");
-
-let msg=input.value;
-
-if(msg=="") return;
-
-chat.innerHTML+="<br><b>You:</b> "+msg;
-
-let reply=replyAI(msg);
-
-setTimeout(()=>{
-chat.innerHTML+="<br><b>AI:</b> "+reply;
-},500);
-
-input.value="";
-
-}
-
-/* AI brain */
-
-function replyAI(msg){
-
-msg=msg.toLowerCase();
-
-if(msg.includes("hello") || msg.includes("hi"))
-return "Hello 👋 Welcome to OM Development and Security Team.";
-
-if(msg.includes("website"))
-return "We create professional websites.";
-
-if(msg.includes("game"))
-return "We develop modern games.";
-
-if(msg.includes("bug"))
-return "We provide bug bounty services.";
-
-if(msg.includes("contact"))
-return "Contact WhatsApp: 9616457920 Email: thekinggaming882@gmail.com";
-
-return "OM AI: Contact us for more information.";
 
 }
 
