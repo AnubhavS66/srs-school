@@ -1,72 +1,130 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-<title>OM Development and Security</title>
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>OM Dev & Security | Command Center</title>
+    <style>
+        :root {
+            --primary: #00ffcc;
+            --bg: #050505;
+        }
 
-<style>
+        body {
+            margin: 0; background: var(--bg);
+            color: var(--primary);
+            font-family: 'Segoe UI', Consolas, sans-serif;
+            overflow: hidden; height: 100vh;
+            display: flex; flex-direction: column; justify-content: center; align-items: center;
+        }
 
-body{
-margin:0;
-background:black;
-color:#00ffcc;
-display:flex;
-justify-content:center;
-align-items:center;
-height:100vh;
-flex-direction:column;
-font-family:Arial;
-}
+        /* Tech Circles Animation */
+        .circle-bg {
+            position: absolute;
+            width: 400px; height: 400px;
+            border: 2px solid rgba(0, 255, 204, 0.1);
+            border-radius: 50%;
+            border-top: 2px solid var(--primary);
+            animation: spin 3s linear infinite;
+        }
 
-/* Logo */
+        @keyframes spin { 100% { transform: rotate(360deg); } }
 
-.logo{
-font-size:40px;
-font-weight:bold;
-margin-top:20px;
-}
+        /* Main Content */
+        .content { z-index: 10; text-align: center; }
 
-/* Loader animation */
+        .logo-title {
+            font-size: 2.5rem; font-weight: 900;
+            letter-spacing: 10px; margin-bottom: 5px;
+            text-shadow: 0 0 20px var(--primary);
+        }
 
-.loader{
-margin-top:20px;
-border:5px solid #222;
-border-top:5px solid #00ffcc;
-border-radius:50%;
-width:50px;
-height:50px;
-animation:spin 1s linear infinite;
-}
+        .services {
+            font-size: 0.8rem; letter-spacing: 4px;
+            opacity: 0.7; margin-bottom: 30px; color: #fff;
+        }
 
-@keyframes spin{
-0%{transform:rotate(0deg);}
-100%{transform:rotate(360deg);}
-}
+        /* Cyber Loading Bar */
+        .loader-wrapper {
+            width: 300px; height: 10px;
+            background: rgba(255,255,255,0.1);
+            border-radius: 20px; position: relative;
+            overflow: hidden; border: 1px solid var(--primary);
+        }
 
-</style>
+        .bar {
+            width: 0%; height: 100%;
+            background: var(--primary);
+            box-shadow: 0 0 15px var(--primary);
+            animation: load 3s forwards cubic-bezier(0, 0, 0, 1);
+        }
 
+        @keyframes load { 100% { width: 100%; } }
+
+        /* Icon Grid */
+        .icons {
+            display: flex; gap: 30px; margin-top: 40px;
+            font-size: 1.5rem;
+        }
+
+        .icon-item { opacity: 0; animation: fadeIn 0.5s forwards; }
+        .i1 { animation-delay: 0.5s; } /* Bug Icon */
+        .i2 { animation-delay: 1.2s; } /* Game Icon */
+        .i3 { animation-delay: 2s; }   /* Code Icon */
+
+        @keyframes fadeIn { from { opacity:0; transform:translateY(10px); } to { opacity:1; transform:translateY(0); } }
+
+    </style>
 </head>
-<body>
+<body onclick="initAudio()">
 
-<img src="https://cdn-icons-png.flaticon.com/512/1055/1055687.png" width="100">
+    <div class="circle-bg"></div>
+    
+    <div class="content">
+        <div class="logo-title">OM DEV & SEC</div>
+        <div class="services">BUG BOUNTY • GAME DEV • WEB ARCHITECT</div>
 
-<div class="logo">
-OM Development and Security
-</div>
+        <div class="loader-wrapper">
+            <div class="bar"></div>
+        </div>
 
-<div class="loader"></div>
+        <div class="icons">
+            <div class="icon-item i1">🛡️ <br><small style="font-size: 10px;">SECURITY</small></div>
+            <div class="icon-item i2">🎮 <br><small style="font-size: 10px;">GAMING</small></div>
+            <div class="icon-item i3">💻 <br><small style="font-size: 10px;">DEVELOP</small></div>
+        </div>
+    </div>
 
-<script>
+    <script>
+        let audioDone = false;
 
-/* 3 second baad main website open hogi */
+        function initAudio() {
+            if(audioDone) return;
+            // Background ambient tech sound (Fake trigger for voice)
+            console.log("Audio System Armed");
+            audioDone = true;
+        }
 
-setTimeout(function(){
+        // Voice Greeting
+        function welcomeVoice() {
+            const speech = new SpeechSynthesisUtterance();
+            speech.text = "Welcome to OM Development and Security Company. Systems are online. Bug bounty, Game development, and Web architecture modules loaded.";
+            speech.volume = 1;
+            speech.rate = 1;
+            speech.pitch = 0.8; // Deep professional voice
+            window.speechSynthesis.speak(speech);
+        }
 
-window.location.href = "home.html";
+        // 3 Second Timeline
+        setTimeout(() => {
+            welcomeVoice();
+            
+            // Redirect after voice starts
+            setTimeout(() => {
+                window.location.href = "home.html";
+            }, 3500); 
 
-}, 3000);
-
-</script>
-
+        }, 3000);
+    </script>
 </body>
 </html>
